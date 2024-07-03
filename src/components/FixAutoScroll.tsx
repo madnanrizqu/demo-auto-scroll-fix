@@ -13,6 +13,7 @@ export const FixAutoScroll = (props: { children: ReactNode }) => {
     { disabled: fixFlagCtx.flag === "disabled" }
   );
 
+  // using router as path as useEffect deps to make sure the useEffect is run on every route change
   const router = useRouter();
 
   useEffect(() => {
@@ -53,7 +54,7 @@ export const FixAutoScroll = (props: { children: ReactNode }) => {
 };
 
 // this should be put in the very bottom of any page
-// to detect if bottom of page has been scrolled
+// to detect if bottom of page has been auto scrolled
 export const FixAutoScrollAnchor = () => {
   return <div id={autoScrollAnchorId}></div>;
 };
