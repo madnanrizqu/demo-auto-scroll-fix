@@ -1,35 +1,20 @@
 import Footer from "@/components/Footer";
 import { useFixFlag } from "@/contexts/fix-flag-context";
+import useInViewport from "@/hooks/useInViewport";
 import { isElementInViewport } from "@/utils/viewport";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Home(
   props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) {
-  const fixFlagCtx = useFixFlag();
-
-  useEffect(() => {
-    const scrollTarget = document.getElementById("target");
-
-    if (!scrollTarget) {
-      return;
-    }
-
-    if (fixFlagCtx.flag === "disabled") {
-      return;
-    }
-
-    // simulate if bug happens then scroll to top
-    if (isElementInViewport(scrollTarget)) {
-      window.scrollTo(0, 0);
-    }
-  }, [fixFlagCtx]);
-
   return (
     <>
       <main className="space-y-4">
         <h1>{`Iteniraries ${props.slug}`}</h1>
+
+        <Link href="/itineraries">Back to itineraries</Link>
 
         <p>This is long page</p>
 
