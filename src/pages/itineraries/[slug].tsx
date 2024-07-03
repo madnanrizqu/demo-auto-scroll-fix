@@ -1,10 +1,6 @@
 import Footer from "@/components/Footer";
-import { useFixFlag } from "@/contexts/fix-flag-context";
-import useInViewport from "@/hooks/useInViewport";
-import { isElementInViewport } from "@/utils/viewport";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Link from "next/link";
-import { useEffect } from "react";
 
 export default function Home(
   props: InferGetServerSidePropsType<typeof getServerSideProps>
@@ -12,9 +8,11 @@ export default function Home(
   return (
     <>
       <main className="space-y-4">
-        <h1>{`Iteniraries ${props.slug}`}</h1>
+        <header className="sticky top-0 z-10 bg-black py-4">
+          <h1>{`Iteniraries ${props.slug}`}</h1>
 
-        <Link href="/itineraries">Back to itineraries</Link>
+          <Link href="/itineraries">Back to itineraries</Link>
+        </header>
 
         <p>This is long page</p>
 

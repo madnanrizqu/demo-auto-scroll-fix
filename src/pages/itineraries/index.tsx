@@ -21,16 +21,24 @@ export default function Home() {
       <main className="space-y-4">
         <ul className="space-y-2">
           <li>
-            <Link href="/itineraries/1#target">Itineraries 1</Link>
+            <Link href="/itineraries/1#target">
+              Itineraries 1 - Will trigger auto scroll bug
+            </Link>
           </li>
           <li>
-            <Link href="/itineraries/2#target">Itineraries 2</Link>
+            <Link href="/itineraries/2#target">
+              Itineraries 2 - Will trigger auto scroll bug
+            </Link>
           </li>
           <li>
-            <Link href="/itineraries/3#target">Itineraries 3</Link>
+            <Link href="/itineraries/3#target">
+              Itineraries 3 - Will trigger auto scroll bug
+            </Link>
           </li>
           <li>
-            <Link href="/itineraries/4#target">Itineraries 4</Link>
+            <Link href="/itineraries/4">
+              Itineraries 4 - Will not trigger auto scroll bug
+            </Link>
           </li>
         </ul>
 
